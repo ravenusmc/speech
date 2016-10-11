@@ -1,9 +1,47 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* Generic CSS */
+
+.align {
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+.text {
+  font-size: 20px;
+  font-weight: bold;
 }
 
+.speech_box {
+  padding-bottom: 100px;
+}
+
+
+/* Gettysburg Page CSS */
+
+.getty_tron {
+  height: 500px;
+  background-color: #65787d;
+  background-image: url("https://hd.unsplash.com/photo-1426170042593-200f250dfdaf");
+  background-size: 100% 100%;
+}
+
+.banner {
+  background-position: top left, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  color: #fff;
+  padding: 3em 0;
+  position: relative;
+  text-align: center
+}
+
+hr {
+  border-top: 1px solid #eee;
+}
+
+.inner {
+  display: inline-block;
+  background: rgba(29,39,38,0.7);
+  position: relative;
+  z-index: 2;
+  padding: 25px 25px 25px 25px;
+  text-align: center;
+}
