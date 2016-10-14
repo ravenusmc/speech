@@ -17,9 +17,9 @@
 /* Gettysburg Page CSS */
 
 .getty_tron {
-  height: 500px;
+  height: 600px;
   background-color: #65787d;
-  background-image: url("https://hd.unsplash.com/photo-1426170042593-200f250dfdaf");
+  background-image: url("https://hd.unsplash.com/photo-1440634755850-8c17b186ff93");
   background-size: 100% 100%;
 }
 
@@ -44,4 +44,50 @@ hr {
   z-index: 2;
   padding: 25px 25px 25px 25px;
   text-align: center;
+}
+
+/* MLK Page CSS */
+
+.dream_tron {
+  height: 600px;
+  background-color: #65787d;
+  background-image: url("https://hd.unsplash.com/photo-1447858165805-528238ab4f61");
+  background-size: 100% 100%;
+}
+
+.banner {
+  background-position: top left, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  color: #fff;
+  padding: 3em 0;
+  position: relative;
+  text-align: center
+}
+
+hr {
+  border-top: 1px solid #eee;
+}
+
+/* Military Industrial Page CSS */
+
+.military_tron {
+  height: 600px;
+  background-color: #65787d;
+  background-image: url("https://hd.unsplash.com/photo-1469389335181-2198b4caa734");
+  background-size: 100% 100%;
+}
+
+.banner {
+  background-position: top left, center center;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  color: #fff;
+  padding: 3em 0;
+  position: relative;
+  text-align: center
+}
+
+hr {
+  border-top: 1px solid #eee;
 }
