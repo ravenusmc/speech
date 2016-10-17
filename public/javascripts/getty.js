@@ -1,11 +1,25 @@
-var wordsOne = [];
-var wordsTWo = [];
-var tempwords = [];
-var wordsThree = [];
-var allWords = [];
+//This is the main function for the program. 
+function main(){
+
+  var allwords = [];
+
+  allWords = getWords();
+  getwordCount(allWords);
+
+
+  //d3.select(".test").append("p").text("New Paragraph! YAY IT WORKS");
+}
+
 
 //This function grabs all of the words in the speech and places them into an array. 
 function getWords(){
+
+  var wordsOne = [];
+  var wordsTWo = [];
+  var tempwords = [];
+  var wordsThree = [];
+  var allWords = [];
+
   var one = document.getElementById('paraOne').innerHTML;
   var two = document.getElementById('paraTwo').innerHTML;
   var three = document.getElementById('paraThree').innerHTML;
@@ -14,17 +28,40 @@ function getWords(){
   wordsThree = three.split(" ");
   tempwords = wordsOne.concat(wordsTwo);
   allWords = tempwords.concat(wordsThree);
+
+
+  return allWords;
+}
+
+//This function will find the count of each word in the allwords array. 
+function getwordCount(allWords){
+  
   for (var i = 0; i < allWords.length; i++){
-    // console.log(allWords[i]);
+      var temp = allWords[i];
+      var wordCount = 0
+      for (var j = 0; j < allWords.length; j++){
+        if (allWords[i] == temp){
+          wordCount += 1 
+          //I need to push the variable, temp, into an object along with the wordcount variable.
+
+        }
+      }
   }
+
 
 }
 
+//     for ch1 in string:
+//         print("ch1:",ch1)
+//         if temp_char == ch1:
+//             temp_count += 1
+
+//This is what will execute the code once the screen has loaded. 
 window.onload = function() {
-  getWords();
+  main();
 };
 
-d3.select(".test").append("p").text("New Paragraph! YAY IT WORKS");
+
 
 // I have to remember how to find the particular value which repeats in an array. 
 // 1. Get one word, start at index = 0, search through the entire array. 
