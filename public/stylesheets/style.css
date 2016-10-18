@@ -37,6 +37,14 @@ hr {
   border-top: 1px solid #eee;
 }
 
+div.graph {
+  display: inline-block;
+  width: 20px;
+  height: 75px;
+  background-color: teal;
+}
+
+
 .inner {
   display: inline-block;
   background: rgba(29,39,38,0.7);

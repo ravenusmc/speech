@@ -2,9 +2,43 @@
 function main(){
 
   var allwords = [];
+  var words = [];
+  var w = 500;
+  var h = 100;
 
   allWords = getWords();
-  getwordCount(allWords);
+  words = getwordCount(allWords);
+  //console.log(words);
+
+  nums = [];
+  for (var i = 0; i < words.length; i++){
+    nums.push(words[i].count);
+  }
+
+  // d3.select('body').selectAll("div")
+  //     .data(nums)
+  //     .enter()
+  //     .append("div")
+  //     .attr("class", "graph")
+  //     .style("height", function(d){
+  //       var barHeight = d * 10;
+  //       return barHeight + "px";
+  //     });
+  
+  var svg = d3.select("body")
+              .append("svg")
+              .attr("width", w)
+              .attr("height", h);
+
+  svg.selectAll("rect")
+    .data(nums)
+    .enter()
+    .append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", 20)
+    .attr("height", 100);
+
 
 
   //d3.select(".test").append("p").text("New Paragraph! YAY IT WORKS");
@@ -18,6 +52,7 @@ function getWords(){
   var wordsTWo = [];
   var tempwords = [];
   var wordsThree = [];
+  var allWordsTemp = [];
   var allWords = [];
 
   var one = document.getElementById('paraOne').innerHTML;
@@ -27,41 +62,42 @@ function getWords(){
   wordsTwo = two.split(" ");
   wordsThree = three.split(" ");
   tempwords = wordsOne.concat(wordsTwo);
-  allWords = tempwords.concat(wordsThree);
-
+  allWordsTemp = tempwords.concat(wordsThree);
+  for (var i = 0; i < allWordsTemp.length; i++){
+    if (allWordsTemp[i] != ""){
+      allWords.push(allWordsTemp[i]);
+    }
+  }
 
   return allWords;
 }
 
 //This function will find the count of each word in the allwords array. 
 function getwordCount(allWords){
-  
-  for (var i = 0; i < allWords.length; i++){
-      var temp = allWords[i];
-      var wordCount = 0
-      for (var j = 0; j < allWords.length; j++){
-        if (allWords[i] == temp){
-          wordCount += 1 
-          //I need to push the variable, temp, into an object along with the wordcount variable.
 
+  var words = []
+  for (var i = 1; i < allWords.length; i++){
+      var tempWord = allWords[i];
+      var wordCount = 0
+      for (var j = 1; j < allWords.length; j++){
+        if (tempWord == allWords[j]){
+          wordCount += 1;
         }
       }
+      if (wordCount <= 5 &&  wordCount >= 2){
+        words.push({word: tempWord, count: wordCount });
+      }     
   }
-
-
+  // console.log(words);
+  return words;
 }
-
-//     for ch1 in string:
-//         print("ch1:",ch1)
-//         if temp_char == ch1:
-//             temp_count += 1
 
 //This is what will execute the code once the screen has loaded. 
 window.onload = function() {
   main();
 };
 
-
+//debugger;
 
 // I have to remember how to find the particular value which repeats in an array. 
 // 1. Get one word, start at index = 0, search through the entire array. 
