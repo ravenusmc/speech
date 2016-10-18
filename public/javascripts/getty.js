@@ -3,7 +3,7 @@ function main(){
 
   var allwords = [];
   var words = [];
-  var w = 500;
+  var w = 1000;
   var h = 100;
 
   allWords = getWords();
@@ -15,16 +15,6 @@ function main(){
     nums.push(words[i].count);
   }
 
-  // d3.select('body').selectAll("div")
-  //     .data(nums)
-  //     .enter()
-  //     .append("div")
-  //     .attr("class", "graph")
-  //     .style("height", function(d){
-  //       var barHeight = d * 10;
-  //       return barHeight + "px";
-  //     });
-  
   var svg = d3.select("body")
               .append("svg")
               .attr("width", w)
@@ -34,7 +24,9 @@ function main(){
     .data(nums)
     .enter()
     .append("rect")
-    .attr("x", 0)
+    .attr("x", function(d, i){
+      return i * (w / nums.length); //bar width of 20 plus 1 for padding
+    })
     .attr("y", 0)
     .attr("width", 20)
     .attr("height", 100);
@@ -42,6 +34,16 @@ function main(){
 
 
   //d3.select(".test").append("p").text("New Paragraph! YAY IT WORKS");
+
+  // d3.select('body').selectAll("div")
+  //     .data(nums)
+  //     .enter()
+  //     .append("div")
+  //     .attr("class", "graph")
+  //     .style("height", function(d){
+  //       var barHeight = d * 10;
+  //       return barHeight + "px";
+  //     });
 }
 
 
