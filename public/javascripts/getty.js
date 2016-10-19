@@ -1,3 +1,20 @@
+//This takes a sentence and removes all coordinating conjuctions
+function conjuctionFilter(sentence){
+  sentence  = sentence.slice(sentence.indexOf("for"),sentence.lastIndeOf("for"));
+  sentence  = sentence.slice(sentence.indexOf("and"),sentence.lastIndeOf("and"));
+  sentence  = sentence.slice(sentence.indexOf("but"),sentence.lastIndeOf("but"));
+  sentence  = sentence.slice(sentence.indexOf("or"),sentence.lastIndeOf("or"));
+  sentence  = sentence.slice(sentence.indexOf("yet"),sentence.lastIndeOf("yet"));
+  sentence  = sentence.slice(sentence.indexOf("so"),sentence.lastIndeOf("so"));
+  
+  sentence  = sentence.slice(sentence.indexOf("For"),sentence.lastIndeOf("For"));
+  sentence  = sentence.slice(sentence.indexOf("And"),sentence.lastIndeOf("And"));
+  sentence  = sentence.slice(sentence.indexOf("But"),sentence.lastIndeOf("But"));
+  sentence  = sentence.slice(sentence.indexOf("Or"),sentence.lastIndeOf("Or"));
+  sentence  = sentence.slice(sentence.indexOf("Yet"),sentence.lastIndeOf("Yet"));
+  sentence  = sentence.slice(sentence.indexOf("So"),sentence.lastIndeOf("So"));
+}
+
 //This is the main function for the program. 
 function main(){
 
