@@ -8,7 +8,7 @@ function main(){
 
   allWords = getWords();
   words = getwordCount(allWords);
-  //console.log(words);
+  console.log(words);
 
   nums = [];
   for (var i = 0; i < words.length; i++){
@@ -67,6 +67,9 @@ function getWords(){
   allWordsTemp = tempwords.concat(wordsThree);
   for (var i = 0; i < allWordsTemp.length; i++){
     if (allWordsTemp[i] != ""){
+      allWords.push(allWordsTemp[i]);
+    }
+    else if (allWordsTemp[i] != "and"){
       allWords.push(allWordsTemp[i]);
     }
   }
