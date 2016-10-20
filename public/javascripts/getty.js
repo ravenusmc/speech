@@ -5,11 +5,15 @@ function main(){
   var words = [];
   var w = 1000;
   var h = 100;
+  var barPadding = 1;
 
   allWords = getWords();
   words = getwordCount(allWords);
   console.log(words);
 
+
+
+  //This for loop pushs the count values into a nums array to hold them.
   nums = [];
   for (var i = 0; i < words.length; i++){
     nums.push(words[i].count);
@@ -27,9 +31,29 @@ function main(){
     .attr("x", function(d, i){
       return i * (w / nums.length); //bar width of 20 plus 1 for padding
     })
-    .attr("y", 0)
-    .attr("width", 20)
-    .attr("height", 100);
+    .attr("y", function(d){
+      return h - (d * 10);
+    })
+    .attr("width", w / nums.length - barPadding)
+    .attr("height", function(d){
+      return d * 10; 
+    })
+    .attr("fill", "teal");
+
+
+  svg.selectAll("text")
+    .data(nums)
+    .enter()
+    .append("text")
+    .text(function(d){
+      return d;
+    })
+    .attr("x", function(d, i){
+      return i * (w / nums.length); //bar width of 20 plus 1 for padding
+    })
+    .attr("y", function(d){
+      return h - (d * 10);
+    });
 
 
 
@@ -68,8 +92,7 @@ function getWords(){
   for (var i = 0; i < allWordsTemp.length; i++){
     if (allWordsTemp[i] != ""){
       allWords.push(allWordsTemp[i]);
-    }
-    else if (allWordsTemp[i] != "and"){
+    }else if (allWordsTemp[i] != "and"){
       allWords.push(allWordsTemp[i]);
     }
   }

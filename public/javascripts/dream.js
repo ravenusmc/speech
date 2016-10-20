@@ -8,5 +8,10 @@ for (var i = 0; i < nums.length; i++){
   }
 }
 
+for (var i = 0; i < allnums.length; i++){
+
+
+}
+
 console.log(allnums);
 

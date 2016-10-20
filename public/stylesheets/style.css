@@ -54,6 +54,10 @@ div.graph {
   text-align: center;
 }
 
+svg {
+  padding-left: 12%;
+}
+
 /* MLK Page CSS */
 
 .dream_tron {
