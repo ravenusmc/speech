@@ -9,7 +9,7 @@ function main(){
 
   allWords = getWords();
   words = getwordCount(allWords);
-  console.log(words);
+  //console.log(words);
 
 
 
@@ -89,14 +89,17 @@ function getWords(){
   wordsThree = three.split(" ");
   tempwords = wordsOne.concat(wordsTwo);
   allWordsTemp = tempwords.concat(wordsThree);
+  //debugger;
   for (var i = 0; i < allWordsTemp.length; i++){
-    if (allWordsTemp[i] != ""){
-      allWords.push(allWordsTemp[i]);
-    }else if (allWordsTemp[i] != "and"){
+    if ( allWordsTemp[i] != "and"){
       allWords.push(allWordsTemp[i]);
     }
+    // else if(allWordsTemp[i] != "Four"){
+    //   allWords.push(allWordsTemp[i]);
+    // }
   }
-
+  
+  console.log(allWords);
   return allWords;
 }
 
@@ -118,6 +121,23 @@ function getwordCount(allWords){
   }
   // console.log(words);
   return words;
+}
+
+
+//This takes a sentence and removes all coordinating conjuctions
+function conjuctionFilter(sentence){
+  sentence  = sentence.slice(sentence.indexOf("for"),sentence.lastIndeOf("for"));
+  sentence  = sentence.slice(sentence.indexOf("but"),sentence.lastIndeOf("but"));
+  sentence  = sentence.slice(sentence.indexOf("or"),sentence.lastIndeOf("or"));
+  sentence  = sentence.slice(sentence.indexOf("yet"),sentence.lastIndeOf("yet"));
+  sentence  = sentence.slice(sentence.indexOf("so"),sentence.lastIndeOf("so"));
+  
+  sentence  = sentence.slice(sentence.indexOf("For"),sentence.lastIndeOf("For"));
+  sentence  = sentence.slice(sentence.indexOf("And"),sentence.lastIndeOf("And"));
+  sentence  = sentence.slice(sentence.indexOf("But"),sentence.lastIndeOf("But"));
+  sentence  = sentence.slice(sentence.indexOf("Or"),sentence.lastIndeOf("Or"));
+  sentence  = sentence.slice(sentence.indexOf("Yet"),sentence.lastIndeOf("Yet"));
+  sentence  = sentence.slice(sentence.indexOf("So"),sentence.lastIndeOf("So"));
 }
 
 //This is what will execute the code once the screen has loaded. 
