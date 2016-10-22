@@ -28,63 +28,111 @@ function main(){
   words = getwordCount(allWords);
   console.log(words);
 
+  // var svg = d3.select("body")
+  //             .append("svg")
+  //             .attr("width", w)
+  //             .attr("height", h);
+  // svg.selectAll("rect")
+  //   .data(words)
+  //   .enter()
+  //   .append("rect")
+  //   .attr("width", function(d){
+  //     return d.count * 80;
+  //   })
+  //   .attr("height", 5000)
+  //   .attr("y", function(d, i)
+  //   {
+  //     return i * 20;
+  //   })
+  //   .attr("fill", "blue");
 
+
+  // svg.selectAll("text")
+  //   .data(words)
+  //   .enter()
+  //   .append("text")
+  //   .attr("fill", "#ffffff")
+  //   .attr("y", function(d, i){
+  //     return i * 80 + 25
+  //   })
+  //   .attr("x", 5)
+  //   .text(function(d){
+  //     return  "word: " + d.word + " Word Count: " + d.count;
+  //   })
+    // .text(function(d){
+    //   return d;
+    // })
+    // .attr("x", function(d, i){
+    //   return i * (w / nums.length); //bar width of 20 plus 1 for padding
+    // })
+    // .attr("y", function(d){
+    //   return h - (d * 10);
+    // });
+
+  //The below way displays the bar chart but with no words. I also create an array of simply the 
+  //word count from my array of objects named words. 
 
   //This for loop pushs the count values into a nums array to hold them.
-  nums = [];
-  for (var i = 0; i < words.length; i++){
-    nums.push(words[i].count);
-  }
+  // nums = [];
+  // for (var i = 0; i < words.length; i++){
+  //   nums.push(words[i].count);
+  // }
+
+  // var svg = d3.select("body")
+  //             .append("svg")
+  //             .attr("width", w)
+  //             .attr("height", h);
+  // svg.selectAll("rect")
+  //   .data(nums)
+  //   .enter()
+  //   .append("rect")
+  //   .attr("x", function(d, i){
+  //     return i * (w / nums.length); //bar width of 20 plus 1 for padding
+  //   })
+  //   .attr("y", function(d){
+  //     return h - (d * 10);
+  //   })
+  //   .attr("width", w / nums.length - barPadding)
+  //   .attr("height", function(d){
+  //     return d * 10; 
+  //   })
+  //   .attr("fill", "teal");
+
+
+  // svg.selectAll("text")
+  //   .data(words)
+  //   .enter()
+  //   .append("text")
+  //   .text(function(d){
+  //     return d;
+  //   })
+  //   .attr("x", function(d, i){
+  //     return i * (w / nums.length); //bar width of 20 plus 1 for padding
+  //   })
+  //   .attr("y", function(d){
+  //     return h - (d * 10);
+  //   });
 
   var svg = d3.select("body")
               .append("svg")
               .attr("width", w)
               .attr("height", h);
-
   svg.selectAll("rect")
-    .data(nums)
+    .data(words)
     .enter()
     .append("rect")
     .attr("x", function(d, i){
-      return i * (w / nums.length); //bar width of 20 plus 1 for padding
+      return i * (w / words.length); //bar width of 20 plus 1 for padding
     })
     .attr("y", function(d){
-      return h - (d * 10);
+      return h - (d.count * 10);
     })
-    .attr("width", w / nums.length - barPadding)
+    .attr("width", w / words.length - barPadding)
     .attr("height", function(d){
-      return d * 10; 
+      return d.count * 10; 
     })
     .attr("fill", "teal");
 
-
-  svg.selectAll("text")
-    .data(nums)
-    .enter()
-    .append("text")
-    .text(function(d){
-      return d;
-    })
-    .attr("x", function(d, i){
-      return i * (w / nums.length); //bar width of 20 plus 1 for padding
-    })
-    .attr("y", function(d){
-      return h - (d * 10);
-    });
-
-
-
-  //d3.select(".test").append("p").text("New Paragraph! YAY IT WORKS");
-
-  // d3.select('body').selectAll("div")
-  //     .data(nums)
-  //     .enter()
-  //     .append("div")
-  //     .attr("class", "graph")
-  //     .style("height", function(d){
-  //       var barHeight = d * 10;
-  //       return barHeight + "px";
-  //     });
 }
 
 
@@ -133,29 +181,12 @@ function getwordCount(allWords){
           wordCount += 1;
         }
       }
-      if (wordCount <= 5 &&  wordCount >= 2){
+      if (wordCount <= 8 &&  wordCount >= 2){
         words.push({word: tempWord, count: wordCount });
       }     
   }
   // console.log(words);
   return words;
-}
-
-
-//This takes a sentence and removes all coordinating conjuctions
-function conjuctionFilter(sentence){
-  sentence  = sentence.slice(sentence.indexOf("for"),sentence.lastIndeOf("for"));
-  sentence  = sentence.slice(sentence.indexOf("but"),sentence.lastIndeOf("but"));
-  sentence  = sentence.slice(sentence.indexOf("or"),sentence.lastIndeOf("or"));
-  sentence  = sentence.slice(sentence.indexOf("yet"),sentence.lastIndeOf("yet"));
-  sentence  = sentence.slice(sentence.indexOf("so"),sentence.lastIndeOf("so"));
-  
-  sentence  = sentence.slice(sentence.indexOf("For"),sentence.lastIndeOf("For"));
-  sentence  = sentence.slice(sentence.indexOf("And"),sentence.lastIndeOf("And"));
-  sentence  = sentence.slice(sentence.indexOf("But"),sentence.lastIndeOf("But"));
-  sentence  = sentence.slice(sentence.indexOf("Or"),sentence.lastIndeOf("Or"));
-  sentence  = sentence.slice(sentence.indexOf("Yet"),sentence.lastIndeOf("Yet"));
-  sentence  = sentence.slice(sentence.indexOf("So"),sentence.lastIndeOf("So"));
 }
 
 //This is what will execute the code once the screen has loaded. 
