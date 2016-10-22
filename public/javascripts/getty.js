@@ -26,7 +26,7 @@ function main(){
 
   allWords = getWords();
   words = getwordCount(allWords);
-  //console.log(words);
+  console.log(words);
 
 
 
@@ -108,15 +108,16 @@ function getWords(){
   allWordsTemp = tempwords.concat(wordsThree);
   //debugger;
   for (var i = 0; i < allWordsTemp.length; i++){
-    if ( allWordsTemp[i] != "and"){
+    if ( allWordsTemp[i] != "and" && allWordsTemp[i] != "on" && allWordsTemp[i] != "of" && allWordsTemp[i] != "for"
+    && allWordsTemp[i] != "to" && allWordsTemp[i] != "or" && allWordsTemp[i] != "a" && allWordsTemp[i] != "that" && allWordsTemp[i] != "in"
+    && allWordsTemp[i] != "do" && allWordsTemp[i] != "so" && allWordsTemp[i] != "this" && allWordsTemp[i] != "the" && allWordsTemp[i] != "The"
+    && allWordsTemp[i] != "any" && allWordsTemp[i] != "can" && allWordsTemp[i] != "as" && allWordsTemp[i] != "But"
+    && allWordsTemp[i] != "should" && allWordsTemp[i] != "from" && allWordsTemp[i] != "nor" && allWordsTemp[i] != "what"
+    && allWordsTemp[i] != "but" && allWordsTemp[i] != "thus" && allWordsTemp[i] != "which" && allWordsTemp[i] != "have"){
       allWords.push(allWordsTemp[i]);
     }
-    // else if(allWordsTemp[i] != "Four"){
-    //   allWords.push(allWordsTemp[i]);
-    // }
   }
   
-  console.log(allWords);
   return allWords;
 }
 
