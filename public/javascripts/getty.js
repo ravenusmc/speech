@@ -42,15 +42,15 @@ function main(){
   //   .text(function(d){
   //     return  "word: " + d.word + " Word Count: " + d.count;
   //   })
-    // .text(function(d){
-    //   return d;
-    // })
-    // .attr("x", function(d, i){
-    //   return i * (w / nums.length); //bar width of 20 plus 1 for padding
-    // })
-    // .attr("y", function(d){
-    //   return h - (d * 10);
-    // });
+  //   .text(function(d){
+  //     return d;
+  //   })
+  //   .attr("x", function(d, i){
+  //     return i * (w / nums.length); //bar width of 20 plus 1 for padding
+  //   })
+  //   .attr("y", function(d){
+  //     return h - (d * 10);
+  //   });
 
   //The below way displays the bar chart but with no words. I also create an array of simply the 
   //word count from my array of objects named words. 
@@ -96,6 +96,8 @@ function main(){
   //     return h - (d * 10);
   //   });
 
+
+  //THE BELOW CODE WHICH WILL HAVE THE BAR CHART
   var svg = d3.select("body")
               .append("svg")
               .attr("width", w)
@@ -137,6 +139,7 @@ function getWords(){
   tempwords = wordsOne.concat(wordsTwo);
   allWordsTemp = tempwords.concat(wordsThree);
   //debugger;
+  //In this for loop I am removing all words that I do not care about such as coordinating conjunctions etc. 
   for (var i = 0; i < allWordsTemp.length; i++){
     if ( allWordsTemp[i] != "and" && allWordsTemp[i] != "on" && allWordsTemp[i] != "of" && allWordsTemp[i] != "for"
     && allWordsTemp[i] != "to" && allWordsTemp[i] != "or" && allWordsTemp[i] != "a" && allWordsTemp[i] != "that" && allWordsTemp[i] != "in"
