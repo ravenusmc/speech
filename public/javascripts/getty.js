@@ -89,6 +89,7 @@ function getWords(){
   tempwords = wordsOne.concat(wordsTwo);
   allWordsTemp = tempwords.concat(wordsThree);
   //debugger;
+  
   //In this for loop I am removing all words that I do not care about such as coordinating conjunctions etc. 
   for (var i = 0; i < allWordsTemp.length; i++){
     if ( allWordsTemp[i] != "and" && allWordsTemp[i] != "on" && allWordsTemp[i] != "of" && allWordsTemp[i] != "for"
