@@ -26,18 +26,19 @@ function getWords(){
   wordsOne = one.split(" ");
 
   //In this for loop I am removing all words that I do not care about such as coordinating conjunctions etc. 
-  for (var i = 0; i < allWords.length; i++){
-    if (allWords[i] != "and" && allWords[i] != "on" && allWords[i] != "of" && allWords[i] != "for"
-    && allWords[i] != "to" && allWords[i] != "or" && allWords[i] != "a" && allWords[i] != "that" && allWords[i] != "in"
-    && allWords[i] != "do" && allWords[i] != "so" && allWords[i] != "this" && allWords[i] != "the" && allWords[i] != "The"
-    && allWords[i] != "any" && allWords[i] != "can" && allWords[i] != "as" && allWords[i] != "But"
-    && allWords[i] != "should" && allWords[i] != "from" && allWords[i] != "nor" && allWords[i] != "what"
-    && allWords[i] != "but" && allWords[i] != "thus" && allWords[i] != "which" && allWords[i] != "have"){
-      words.push(allWords[i]);
+  for (var i = 0; i < wordsOne.length; i++){
+    if (wordsOne[i] != "and" && wordsOne[i] != "on" && wordsOne[i] != "of" && wordsOne[i] != "for"
+    && wordsOne[i] != "to" && wordsOne[i] != "or" && wordsOne[i] != "a" && wordsOne[i] != "that" && wordsOne[i] != "in"
+    && wordsOne[i] != "do" && wordsOne[i] != "so" && wordsOne[i] != "this" && wordsOne[i] != "the" && wordsOne[i] != "The"
+    && wordsOne[i] != "any" && wordsOne[i] != "can" && wordsOne[i] != "as" && wordsOne[i] != "But"
+    && wordsOne[i] != "should" && wordsOne[i] != "from" && wordsOne[i] != "nor" && wordsOne[i] != "what"
+    && wordsOne[i] != "but" && wordsOne[i] != "thus" && wordsOne[i] != "which" && wordsOne[i] != "have" 
+    && wordsOne[i] != "" && wordsOne[i] != "This" && wordsOne[i] != "who" && wordsOne[i] != "an" 
+    && wordsOne[i] != "not" && wordsOne[i] != "only" && wordsOne[i] != "still" && wordsOne[i] != "into" && wordsOne[i] != "had"
+    && wordsOne[i] != "been" && wordsOne[i] != "And"){
+      words.push(wordsOne[i]);
     }
   }
-
-
 
   //Returning the array
   return words; 
