@@ -7,6 +7,7 @@ function main(){
   //Getting the array that will hold all of the words filled. 
   allWords = getWords();
 
+  //Displaying all the words
   console.log(allWords);
 
 
