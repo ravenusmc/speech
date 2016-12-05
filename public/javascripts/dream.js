@@ -6,6 +6,7 @@ function main(){
 
   //Getting the array that will hold all of the words filled. 
   allWords = getWords();
+  words = getwordCount(allWords);
 
   //Displaying all the words for testing purposes
   console.log(allWords);
@@ -43,8 +44,10 @@ function getWords(){
 
   //Returning the array
   return words; 
-
 }
+
+//This function will find the count of each word in the allwords array.
+function 
 
 
 //This is what will execute the code once the screen has loaded. 
