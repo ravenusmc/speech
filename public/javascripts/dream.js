@@ -17,7 +17,7 @@ function main(){
   //console.log(allWords);
   console.log(words);
 
-  //D3 code 
+  //D3 code that will display the correct text on the screen
   var svg = d3.select("body")
               .append("svg")
               .attr("width", w)
