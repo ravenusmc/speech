@@ -36,7 +36,7 @@ function main(){
     })
     .attr("fill", "red");
 
-
+  //These lines of code will actually display the frequency of the word
   svg.selectAll("text")
     .data(words)
     .enter()
