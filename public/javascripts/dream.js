@@ -99,7 +99,7 @@ function getwordCount(allWords){
           wordCount += 1;
         }
       }
-      if (wordCount <= 8 &&  wordCount >= 2){
+      if (wordCount <= 15 &&  wordCount >= 2){
         words.push({word: tempWord, count: wordCount });
       }     
     }
