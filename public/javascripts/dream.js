@@ -86,7 +86,8 @@ function getWords(){
   return words; 
 }
 
-//This function will find the count of each word in the allwords array.
+//This function will find the count of each word in the allwords array. It will only accept values 
+//from 2 to 15 for the number of times that a word appears. 
 function getwordCount(allWords){
 
   var words = []
